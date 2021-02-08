@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackBoard.Model;
 
 namespace BackBoard.Controllers
 {
@@ -26,14 +27,7 @@ namespace BackBoard.Controllers
         [HttpGet]
         public IEnumerable<MessageBoard> Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new MessageBoard
-            {
-                DateCreated = DateTime.Now.AddDays(index),
-                BoardId = rng.Next(1,5),
-                Description = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return null;
         }
     }
 }
