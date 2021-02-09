@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BackBoard.Model
 {
-    public class BoardMessageThreads
+    public class MessageBoardThreads
     {
         public string BoardMessageThreadId { get; set; }
         public DateTime PostedAt { get; set; }

@@ -10,17 +10,17 @@ namespace BackBoard.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MessageBoardController : ControllerBase
+    public class MessageBoardThreadController : ControllerBase
     {
-        private readonly ILogger<MessageBoardController> _logger;
+        private readonly ILogger<MessageBoardThreadController> _logger;
 
-        public MessageBoardController(ILogger<MessageBoardController> logger)
+        public MessageBoardThreadController(ILogger<MessageBoardThreadController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<MessageBoard> Get()
+        public IEnumerable<MessageBoardThreads> Get()
         {
             return null;
         }

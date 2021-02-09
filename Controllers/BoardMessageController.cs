@@ -10,17 +10,17 @@ namespace BackBoard.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MessageBoardController : ControllerBase
+    public class BoardMessageController : ControllerBase
     {
-        private readonly ILogger<MessageBoardController> _logger;
+        private readonly ILogger<BoardMessageController> _logger;
 
-        public MessageBoardController(ILogger<MessageBoardController> logger)
+        public BoardMessageController(ILogger<BoardMessageController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<MessageBoard> Get()
+        public IEnumerable<BoardMessages> Get()
         {
             return null;
         }
