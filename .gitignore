@@ -18,6 +18,7 @@
 *.VC.opendb
 *.db
 *.pyc
+*.dll
 libs/
 bin/
 obj/
@@ -27,6 +28,8 @@ Temp/
 Tegra-Android/
 Debug/
 .vs/
+.vscode/
+Core/
 
 # =============== #
 # Unity generated #
