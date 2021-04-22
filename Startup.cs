@@ -1,4 +1,5 @@
 using BackBoard.Model;
+using BackBoard.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,8 @@ namespace BackBoard
 
             services.AddSingleton<IPrivateMessagesDatabaseSettings>(sp =>
             sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<PrivateMessagesDatabaseSettings>>().Value);
+
+            services.AddSingleton<PrivateMsgService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

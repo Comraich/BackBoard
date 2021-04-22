@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BackBoard.Services;
+using BackBoard.Model;
 
 namespace BackBoard.Controllers
 {
@@ -9,17 +11,30 @@ namespace BackBoard.Controllers
     [ApiController]
     public class PrivateMsgController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult GetMessageIds(String UserId)
-        {
-            return Ok();
-        }
+        private readonly PrivateMsgService _privateMsgService;
 
-        /* [HttpGet]
-        public IActionResult GetMessage(Guid MsgId)
+        public PrivateMsgController(PrivateMsgService privateMsgService)
         {
-            return Ok();
+            _privateMsgService = privateMsgService;
         }
- */
+        [HttpGet]
+        public ActionResult<List<PrivateMsg>> Get() 
+        {
+            return _privateMsgService.Get();
+        }
+            
+
+        /* [HttpGet("{id:length(24)}", Name = "GetPrivateMsg")]
+        public ActionResult<PrivateMsg> Get(string id)
+        {
+            var privateMsg = _privateMsgService.Get(id);
+
+            if (privateMsg == null)
+            {
+                return NotFound();
+            }
+
+            return privateMsg;
+        }   */
     }
 }

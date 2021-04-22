@@ -16,5 +16,6 @@ namespace BackBoard.Model
         [BsonElement("Recipient")]
         public Guid Recipent { get; set; }
         public String Payload { get; set; }
+        public BsonDateTime MessageDate { get; set; }
     }
 }
