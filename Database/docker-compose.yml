@@ -11,6 +11,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: jP5yF6mN5rA6lU7hI1eD5wV5lE8lT3zZ
     volumes:
     - ghostboard-db:/data/db
+    ports:
+    - 27017:27017
 
 volumes:
   ghostboard-db:
