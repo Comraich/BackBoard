@@ -12,6 +12,8 @@ namespace BackBoard.Model
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public Guid MessageId { get; set; }
+        
+        [BsonElement("Recipient")]
         public Guid Recipent { get; set; }
         public String Payload { get; set; }
     }

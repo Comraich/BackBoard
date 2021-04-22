@@ -1,3 +1,4 @@
+using BackBoard.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,12 @@ namespace BackBoard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // requires using Microsoft.Extensions.Options
+            services.Configure<PrivateMessagesDatabaseSettings>(
+            Configuration.GetSection(nameof(PrivateMessagesDatabaseSettings)));
+
+            services.AddSingleton<IPrivateMessagesDatabaseSettings>(sp =>
+            sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<PrivateMessagesDatabaseSettings>>().Value);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

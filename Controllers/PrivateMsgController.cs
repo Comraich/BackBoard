@@ -14,12 +14,12 @@ namespace BackBoard.Controllers
         {
             return Ok();
         }
-        
-        [HttpGet]
+
+        /* [HttpGet]
         public IActionResult GetMessage(Guid MsgId)
         {
             return Ok();
         }
-
+ */
     }
 }
